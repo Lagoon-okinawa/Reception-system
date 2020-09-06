@@ -5,10 +5,16 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use BenSampo\Enum\Traits\CastsEnums;
+use App\Enums\Gender;
+use App\Enums\Industory;
+use App\Enums\Job;
+use App\Enums\Location;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use CastsEnums;
 
     /**
      * The attributes that are mass assignable.
@@ -28,6 +34,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $enumCasts = [
+        'gender' => Gender::class,
+        'location' => Location::class,
+        'job' => Job::class,
+        'industory' => Industory::class,
+    ];
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -35,5 +48,9 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'gender' => 'int',
+        'location' => 'int',
+        'job' => 'int',
+        'industory' => 'int',
     ];
 }
