@@ -26,6 +26,7 @@ services:
     depends_on:
       - app
       - db
+      - db-testing
 
   db:
     image: mysql:5.7
@@ -33,9 +34,19 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_DATABASE: lagoon_rec
-      MYSQL_ROOT_PASSWORD: password
-      TZ: 'Asia/Tokyo'
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      TZ: "Asia/Tokyo"
     volumes:
       - db-volume:/var/lib/mysql
       - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+
+  db-testing:
+    image: mysql:5.7
+    container_name: db-testing
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      TZ: "Asia/Tokyo"
