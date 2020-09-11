@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
+use App\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -14,16 +13,15 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         //
-        $param = [
+        factory(User::class)->create([
             'name' => 'fujie',
             'email' => 'fujie@lagoon.jp',
-            'password' => Hash::make('password'),
             'gender' => 1,
             'location' => 1,
             'job' => 2,
             'industory' => 11,
-            'admin' => false,
-        ];
-        DB::table('users')->insert($param);
+            'admin' => true,
+        ]);
+        factory(User::class, 99)->create();
     }
 }
