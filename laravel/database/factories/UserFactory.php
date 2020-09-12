@@ -26,7 +26,7 @@ $factory->define(User::class, function (Faker $faker) {
         'gender' => $faker->numberBetween(0, 2),
         'location' => $faker->numberBetween(0, 20),
         'job' => $faker->numberBetween(0, 8),
-        'industory' => $faker->numberBetween(0, 13),
+        'industry' => $faker->numberBetween(0, 13),
         'remember_token' => Str::random(10),
     ];
 });

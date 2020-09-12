@@ -2,7 +2,7 @@
 
 use App\Enums\Gender;
 use App\Enums\Job;
-use App\Enums\Industory;
+use App\Enums\Industry;
 use App\Enums\Location;
 
 return [
@@ -17,28 +17,28 @@ return [
         Job::CollegeStudent => '大学生',
         Job::Employee => '会社員',
         Job::CivilServant => '公務員',
-        Job::SelfEmplayed => '自営業',
+        Job::SelfEmployed => '自営業',
         Job::Freelance => 'フリーランス',
         Job::Housework => '専業主婦(夫)',
         Job::Unemployed => '無職',
         Job::Other => 'その他',
     ],
 
-    Industory::class => [
-        Industory::Sales => '営業職',
-        Industory::Accounting => '経理',
-        Industory::PlanningAndManagement => '企画・管理',
-        Industory::OfficeAssistant => '事務・アシスタント',
-        Industory::Service => 'サービス職',
-        Industory::Consultants => 'コンサルタント',
-        Industory::Financial => '金融系専門職',
-        Industory::Teacher => '教員',
-        Industory::AgricultureOrFisheries => '農林水産関連職',
-        Industory::TechnicalJob => '技術職',
-        Industory::MedicalProfessional => '医療系専門職',
-        Industory::Enginner => 'エンジニア職',
-        Industory::Designer => 'デザイナー職',
-        Industory::Other => 'その他',
+    Industry::class => [
+        Industry::Sales => '営業職',
+        Industry::Accounting => '経理',
+        Industry::PlanningAndManagement => '企画・管理',
+        Industry::OfficeAssistant => '事務・アシスタント',
+        Industry::Service => 'サービス職',
+        Industry::Consultants => 'コンサルタント',
+        Industry::Financial => '金融系専門職',
+        Industry::Teacher => '教員',
+        Industry::AgricultureOrFisheries => '農林水産関連職',
+        Industry::TechnicalJob => '技術職',
+        Industry::MedicalProfessional => '医療系専門職',
+        Industry::Engineer => 'エンジニア職',
+        Industry::Designer => 'デザイナー職',
+        Industry::Other => 'その他',
     ],
 
     Location::class => [

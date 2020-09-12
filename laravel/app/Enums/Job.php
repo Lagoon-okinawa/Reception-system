@@ -16,7 +16,7 @@ final class Job extends Enum implements LocalizedEnum
     const CollegeStudent = 1;
     const Employee = 2;
     const CivilServant = 3;
-    const SelfEmplayed = 4;
+    const SelfEmployed = 4;
     const Freelance = 5;
     const Housework = 6;
     const Unemployed = 7;

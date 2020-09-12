@@ -10,7 +10,7 @@ use BenSampo\Enum\Contracts\LocalizedEnum;
  * @method static static OptionTwo()
  * @method static static OptionThree()
  */
-final class Industory extends Enum implements LocalizedEnum
+final class Industry extends Enum implements LocalizedEnum
 {
     const Sales = 0;
     const Accounting = 1;
@@ -23,7 +23,7 @@ final class Industory extends Enum implements LocalizedEnum
     const AgricultureOrFisheries = 8;
     const TechnicalJob = 9;
     const MedicalProfessional = 10;
-    const Enginner = 11;
+    const Engineer = 11;
     const Designer = 12;
     const Other = 13;
 }

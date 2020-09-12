@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->integer('gender');
             $table->integer('location');
             $table->integer('job');
-            $table->integer('industory');
+            $table->integer('industry');
             $table->boolean('admin')->default(false);
             $table->rememberToken();
             $table->timestamps();

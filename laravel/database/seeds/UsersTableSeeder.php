@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
             'gender' => 1,
             'location' => 1,
             'job' => 2,
-            'industory' => 11,
+            'industry' => 11,
             'admin' => true,
         ]);
         factory(User::class, 99)->create();

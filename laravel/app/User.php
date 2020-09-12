@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use BenSampo\Enum\Traits\CastsEnums;
 use App\Enums\Gender;
-use App\Enums\Industory;
+use App\Enums\Industry;
 use App\Enums\Job;
 use App\Enums\Location;
 
@@ -22,7 +22,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'gender', 'location', 'job', 'industory', 'birthday',
+        'name', 'email', 'password', 'gender', 'location', 'job', 'industry', 'birthday',
     ];
 
     /**
@@ -38,7 +38,7 @@ class User extends Authenticatable
         'gender' => Gender::class,
         'location' => Location::class,
         'job' => Job::class,
-        'industory' => Industory::class,
+        'industry' => Industry::class,
     ];
 
     /**
@@ -51,6 +51,6 @@ class User extends Authenticatable
         'gender' => 'int',
         'location' => 'int',
         'job' => 'int',
-        'industory' => 'int',
+        'industry' => 'int',
     ];
 }
