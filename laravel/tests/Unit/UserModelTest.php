@@ -33,38 +33,37 @@ class UserModelTest extends TestCase
         $this->assertCount(1, User::all());
     }
 
-    public function testCreateUserFaild_名前が空の時()
+    public function testCreateUserFailed_名前が空の時()
     {
         try {
-            $this->user1 = factory(User::class)->make();
-            $this->user1->name = null;
-            $this->user1->save();
+            $this->user2->name = null;
+            $this->user2->save();
         } catch (\Throwable $th) {
             $this->assertCount(1, User::all());
         }
     }
 
-    public function testCreateUserFaild_名前が21文字以上()
+    public function testCreateUserFailed_名前が21文字以上()
     {
         try {
-            $this->user1->name = str_repeat('a', 21);
-            $this->user1->save();
+            $this->user2->name = str_repeat('a', 21);
+            $this->user2->save();
         } catch (\Throwable $th) {
             $this->assertCount(1, User::all());
         }
     }
 
-    public function testCreateUserFaild_メールアドレスが空の時()
+    public function testCreateUserFailed_メールアドレスが空の時()
     {
         try {
-            $this->user1->email = null;
-            $this->user1->save();
+            $this->user2->email = null;
+            $this->user2->save();
         } catch (\Throwable $th) {
             $this->assertCount(1, User::all());
         }
     }
 
-    public function testCreateUserFaild_メールアドレスが重複する時()
+    public function testCreateUserFailed_メールアドレスが重複する時()
     {
         try {
             $this->user2->email = $this->user1->email;
@@ -74,41 +73,41 @@ class UserModelTest extends TestCase
         }
     }
 
-    public function testCreateUserFaild_性別が空の時()
+    public function testCreateUserFailed_性別が空の時()
     {
         try {
-            $this->user1->gender = null;
-            $this->user1->save();
+            $this->user2->gender = null;
+            $this->user2->save();
         } catch (\Throwable $th) {
             $this->assertCount(1, User::all());
         }
     }
 
-    public function testCreateUserFaild_住居エリアが空の時()
+    public function testCreateUserFailed_住居エリアが空の時()
     {
         try {
-            $this->user1->location = null;
-            $this->user1->save();
+            $this->user2->location = null;
+            $this->user2->save();
         } catch (\Throwable $th) {
             $this->assertCount(1, User::all());
         }
     }
 
-    public function testCreateUserFaild_職業が空の時()
+    public function testCreateUserFailed_職業が空の時()
     {
         try {
-            $this->user1->job = null;
-            $this->user1->save();
+            $this->user2->job = null;
+            $this->user2->save();
         } catch (\Throwable $th) {
             $this->assertCount(1, User::all());
         }
     }
 
-    public function testCreateUserFaild_職種が空の時()
+    public function testCreateUserFailed_職種が空の時()
     {
         try {
-            $this->user1->industory = null;
-            $this->user1->save();
+            $this->user2->industry = null;
+            $this->user2->save();
         } catch (\Throwable $th) {
             $this->assertCount(1, User::all());
         }
