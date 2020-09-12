@@ -15,10 +15,15 @@
 # 🔒  :lock: 新機能の公開範囲の制限
 # 👮  :cop: セキュリティ関連の改善
 
-# ==== Format ====
-# :emoji: Subject
+# ==== フォーマット ====
+# :emoji_name: Subject
 #
-# Commit body...
+# Message Detail
+ 
+# 例）
+# :+1: ご飯食べるメソッドの作成
+#
+# Userモデルにご飯食べるメソッドを作成した．
 
 # ==== The Seven Rules ====
 # 1. Separate subject from body with a blank line
