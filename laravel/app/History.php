@@ -9,12 +9,18 @@ use App\Enums\Purpose;
 class History extends Model
 {
     /**
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'purpose',
+        'user_id', 'purpose'
     ];
 
     /**

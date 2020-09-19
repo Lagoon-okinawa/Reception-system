@@ -8,6 +8,7 @@ use Tests\TestCase;
 use App\User;
 use App\History;
 use Illuminate\Foundation\Testing\WithFaker;
+use Carbon\Carbon;
 
 class HistoryModelTest extends TestCase
 {
@@ -31,8 +32,13 @@ class HistoryModelTest extends TestCase
         $this->assertCount(1, User::all());
     }
 
-    public function testExample()
+    public function testCreateHistoryFaild_目的が空の時()
     {
-        $this->assertTrue(true);
+        try {
+            $this->history->purpose = null;
+            $this->history->save();
+        } catch (\Throwable $th) {
+            $this->assertCount(1, History::all());
+        }
     }
 }
