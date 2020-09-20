@@ -18,7 +18,7 @@ $factory->define(History::class, function (Faker $faker) {
     $check_out_at = clone $check_in_at;
 
     $staying_minutes = rand(1, 480 - $check_in_minutes); // 滞在分数を定義する
-    $check_out_at = $check_out_at->addMinutes($staying_minutes);
+    $check_out_at->addMinutes($staying_minutes);
 
     return [
         'user_id' => $faker->numberBetween(1, 100),
