@@ -4,6 +4,7 @@ use App\Enums\Gender;
 use App\Enums\Job;
 use App\Enums\Industry;
 use App\Enums\Location;
+use App\Enums\Purpose;
 
 return [
     Gender::class => [
@@ -63,5 +64,14 @@ return [
         Location::PrefOther => '県内その他',
         Location::Other => '県外',
         Location::Abord => '海外',
+    ],
+
+    Purpose::class => [
+        Purpose::Coworking => 'コワーキング',
+        Purpose::Consulting => '企業相談',
+        Purpose::Manufacturing => 'モノ作り',
+        Purpose::Cafe => 'カフェ',
+        Purpose::Events => 'イベント参加',
+        Purpose::Others => 'その他',
     ],
 ];
