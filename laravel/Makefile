@@ -1,14 +1,16 @@
 .DEFAULT_GOAL := help
 
-build: env vendor db-init ## build development environment
+build: env vendor
 
-vendor:
+build-local: env vendor db-init ## build development environment
+
+vendor: ## vendor settings
 	docker-compose run --rm app composer install
 	docker-compose run --rm app php artisan config:clear
 
 serve: up attach ## Run Serve
 
-env:
+env: ## Copy env files
 	cp .env.example .env
 
 up: ## Run app container
@@ -31,27 +33,27 @@ tinker: ## Laravel console
 
 db-init: migrate seed ## Database initialize
 
-migrate:
+migrate: ## DB migrate
 	docker-compose run --rm app php artisan migrate --force
 
 refresh: migrate-refresh seed ## Laravel migrate:refresh --seed
 
-migrate-refresh:
+migrate-refresh: ## DB migrate refresh
 	docker-compose run --rm app php artisan migrate:refresh --seed
 
-route:
+route: ## Laravel routing list display
 	docker-compose run --rm app php artisan route:list
 
 seed: ## Laravel db:seed
 	docker-compose run --rm app php artisan db:seed --force
 
-test:
+test: ## phpunit test run
 	docker-compose run --rm app ./vendor/bin/phpunit
 
-format-dry-run:
+format-dry-run: ## Linting format diff
 	docker-compose run --rm app ./vendor/bin/php-cs-fixer fix --dry-run --diff-format udiff ./
 
-format:
+format: ## Linting code format
 	docker-compose run --rm app ./vendor/bin/php-cs-fixer fix ./
 
 .PHONY: help
