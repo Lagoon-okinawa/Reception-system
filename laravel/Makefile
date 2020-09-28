@@ -1,6 +1,8 @@
 .DEFAULT_GOAL := help
 
-build: env vendor db-init ## build development environment
+build: env vendor
+
+build-local: env vendor db-init ## build development environment
 
 vendor:
 	docker-compose run --rm app composer install
